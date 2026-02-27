@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NXTweaker - Unleash Your PC's Full Power</title>
+    <meta name="description" content="NXTweaker — optimize your PC for gaming: boost FPS, clean your system, Home Service in Cairo & Giza. Buy NX Tweaks, Drag Macro, Aim Bot.">
+    <meta name="keywords" content="NXTweaker, PC optimization, gaming optimization, FPS boost, clean PC, NX Tweaks, Drag Macro, Aim Bot, nx gaming, pubg mobile no recoil">    <link rel="canonical" href="https://www.nxtweaks.online/">
+    <link rel="sitemap" type="application/xml" href="sitemap.xml">
     <link rel="icon" href="nn.ico" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -1967,6 +1970,16 @@
             if (!was) it.classList.add('on');
         }
 
+        function updatePaymentMethodsByCurrency() {
+            var isUsd = activeCurrency === 'usd';
+            document.getElementById('pmVf').style.display = isUsd ? 'none' : '';
+            document.getElementById('pmIp').style.display = isUsd ? 'none' : '';
+            document.getElementById('pmBn').style.display = isUsd ? '' : 'none';
+            if (isUsd) {
+                selPay('bn');
+            }
+        }
+
         function openPay(k) {
             if (isLimited()) {
                 showLimit();
@@ -1984,6 +1997,7 @@
             document.getElementById('payModal').classList.add('open');
             document.body.style.overflow = 'hidden';
             resetModal();
+            updatePaymentMethodsByCurrency();
         }
 
         function closePay() {
